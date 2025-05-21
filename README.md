@@ -49,24 +49,6 @@ git clone https://github.com/your-username/secure-todo-app.git
 cd secure-todo-app
 ```
 
-### 2. Configure PostgreSQL (Optional)
-
-Default Docker Compose settings:
-
-```properties
-# src/main/resources/application.properties
-
-spring.datasource.url=jdbc:postgresql://db:5432/todoapp
-spring.datasource.username=todo_user
-spring.datasource.password=todo_password
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-
-# JWT secret - replace in production
-jwt.secret=YourSuperSecretKeyThatIsLongAndComplex
-```
-
 ---
 
 ## 🐳 Running with Docker Compose
