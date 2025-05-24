@@ -18,9 +18,11 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    private String password;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role = Role.User;
+    private ERole role = ERole.User;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Todo> todos;
@@ -48,11 +50,19 @@ public class User {
         this.email = email;
     }
 
-    public Role getRole() {
+//    public Role getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(Role role) {
+//        this.role = role;
+//    }
+
+    public ERole getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(ERole role) {
         this.role = role;
     }
 
