@@ -46,4 +46,9 @@ public class JwtUtils {
         ResponseCookie cookie = ResponseCookie.from(jwtCookie, null).path("/api").build();
         return cookie;
     }
+
+    public String getUsernameFromToken(String token) {
+        return Jwts.parserBuilder().setSigningKey(key()).build()
+                .parseClaimsJwt(token).getBody().getSubject();
+    }
 }
