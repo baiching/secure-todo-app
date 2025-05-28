@@ -7,6 +7,30 @@ A robust and secure To-Do application built with **Spring Boot**, featuring **JW
 
 ## 🚀 Features
 
+### 🔒 Security Implementation
+
+#### Configuration Classes:
+1. **`WebSecurityConfig.java`** (Main security configuration):
+   - Configures authentication providers and password encoding
+   - Defines CORS policies
+   - Sets up security filter chain with JWT authentication
+   - Manages session creation policy (stateless)
+
+2. **`SecurityConfig.java`** (Additional security configuration):
+   - Contains security-related constants and utilities
+   - Helps organize security-related beans and configurations
+   - Works in conjunction with WebSecurityConfig
+
+3. **`RoleInitializer.java`** (Role management):
+   - Ensures required roles exist in database at startup
+   - Uses `@PostConstruct` to run initialization after dependency injection
+   - Prevents duplicate role creation with `existsByName` check
+
+#### JWT Components:
+- Token generation, validation and parsing
+- Cookie management for stateless authentication
+- Automatic token extraction from Authorization header
+
 ### 🔐 Authentication & Authorization
 - **User Registration**: Secure signup with encrypted password storage.
 - **JWT Login**: Issue and validate tokens for authenticated sessions.
@@ -48,7 +72,6 @@ A robust and secure To-Do application built with **Spring Boot**, featuring **JW
 git clone https://github.com/your-username/secure-todo-app.git
 cd secure-todo-app
 ```
-
 ---
 
 ## 🐳 Running with Docker Compose
