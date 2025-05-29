@@ -9,18 +9,19 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;
 import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.util.Date;
 
-
+@Component
 public class JwtUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
     @Value("${baiching.app.jwtSecret}")
     private String jwtSecret;
 
-    @Value("${baiching.app.jwtExpirationMs")
+    @Value("${baiching.app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
     @Value("${baiching.app.jwtCookieName}")
