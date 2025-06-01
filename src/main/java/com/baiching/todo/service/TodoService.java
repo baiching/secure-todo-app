@@ -33,6 +33,14 @@ public class TodoService {
         todoRepository.deleteById(id);
     }
 
+    public List<Todo> getTodos(User user) {
+        return todoRepository.findByUser(user);
+    }
+
+    public Todo getUserTodoById(Long id, User user) {
+        return todoRepository.findByIdAndUser(id, user);
+    }
+
     public List<Todo> getAllTodos() {
         return todoRepository.findAll();
     }

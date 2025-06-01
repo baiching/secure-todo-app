@@ -18,4 +18,6 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
 
     // For admin access to all todos (if needed)
     List<Todo> findAllByOrderByCreatedAtDesc();
+
+    Todo findByIdAndUser(Long id, User user);
 }
