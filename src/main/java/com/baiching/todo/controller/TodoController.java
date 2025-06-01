@@ -40,4 +40,12 @@ public class TodoController {
     public ResponseEntity<Todo> getTodoById(@PathVariable Long id, @AuthenticationPrincipal User user){
         return ResponseEntity.ok(todoService.getUserTodoById(id, user));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTodo(
+            @PathVariable Long id,
+            @AuthenticationPrincipal User user) {
+        todoService.deleteTodo(id);
+        return ResponseEntity.noContent().build();
+    }
 }
